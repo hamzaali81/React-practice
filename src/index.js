@@ -66,7 +66,7 @@ function People(){
   ]
   return(
     <section>
-    <Person person={friend[0]} />
+    <Person person={friend[0]}><p>Some info about Experience</p></Person>
 
     <Person person={friend[1]} />
     <Person person={friend[2]} />
@@ -93,8 +93,11 @@ function People(){
 //   console.log(props);
 //   // const {name,age,company}=props.person;
 
-const Person =({person:{name,job,age,company}})=>{
-  return (
+// const Person =({children,person:{name,job,age,company}})=>{
+const Person=props=>{
+  const {name,age,company}=props.person;
+  const {children}=props;
+return (
   <article>
   {/* <h1>Ali</h1>
   <p>developer</p> */}
@@ -104,6 +107,8 @@ const Person =({person:{name,job,age,company}})=>{
   <h1>{name}</h1>
   <p>{age}</p>
   <p>{company}</p>
+  {props.children}
+
   <hr/>
 </article>
 )
