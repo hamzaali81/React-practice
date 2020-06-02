@@ -79,20 +79,22 @@ function People(){
   )
 }
 
-const person={
-  name:"ahmed",
-  age:22
-}
-const {name}=person;
-console.log(name)
+// const person={
+//   name:"ahmed",
+//   age:22
+// }
+// const {name}=person;
+// console.log(name)
 
-const showPerson=({name,age})=> console.log(name,age);
+// const showPerson=({name,age})=> console.log(name,age);
 
-showPerson(person);
-const Person=props=>{
-  console.log(props);
-  const {name,age,company}=props.person;
-return (
+// // showPerson(person);
+// const Person=props=>{
+//   console.log(props);
+//   // const {name,age,company}=props.person;
+
+const Person =({person:{name,job,age,company}})=>{
+  return (
   <article>
   {/* <h1>Ali</h1>
   <p>developer</p> */}
@@ -105,8 +107,8 @@ return (
   <hr/>
 </article>
 )
-}
 
+}
 // const Person1=()=>{
 //   return (
 //     <article>
