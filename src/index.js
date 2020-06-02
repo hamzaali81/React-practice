@@ -54,25 +54,54 @@ import './index.js';
 
 
 
+//Destructuring
+
 
 function People(){
+
+  const friend=[
+    {name:"hamza",age:22},
+    {name: "ali",age: 20},
+     {name: "ahmed",age: 12,company:"apple"}
+  ]
   return(
     <section>
+    <Person person={friend[0]} />
+
+    <Person person={friend[1]} />
+    <Person person={friend[2]} />
+
+
+    {/* <Person name="john" job="designer"/>
     <Person name="john" job="designer"/>
-    <Person name="john" job="designer"/>
-    <Person name="john" job="designer"/>
+    <Person name="john" job="designer"/> */}
     </section>
   )
 }
 
-const Person=(props)=>{
+const person={
+  name:"ahmed",
+  age:22
+}
+const {name}=person;
+console.log(name)
+
+const showPerson=({name,age})=> console.log(name,age);
+
+showPerson(person);
+const Person=props=>{
   console.log(props);
+  const {name,age,company}=props.person;
 return (
   <article>
   {/* <h1>Ali</h1>
   <p>developer</p> */}
-  <h1>{props.name}</h1>
-  <p>{props.job}</p>
+  {/* <h1>{props.person.name}</h1>
+  <p>{props.person.age}</p> */}
+
+  <h1>{name}</h1>
+  <p>{age}</p>
+  <p>{company}</p>
   <hr/>
 </article>
 )
